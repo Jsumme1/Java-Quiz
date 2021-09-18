@@ -5,7 +5,6 @@ const question = document.querySelector("#question")
 const choices = Array.from(document.querySelectorAll(".choice-text"))
 const progressText = document.querySelector("#progressText")
 const scoreText = document.querySelector("#score")
-const progressBarFull = document.querySelector("#progressBarFull")
 
 let currentQuestion ={}
 let acceptingAnswers = true
@@ -17,21 +16,39 @@ let availableQuestions =[]
 
 let questions =[
     {
-        question: "What is 2+2", 
-        choice1: "2",
-        choice2: "4",
-        choice3: "5",
-        choice4: "6",
-        answer: 2,
+        question: "String values must be enclosed within ____ when being assigned to varliables", 
+        choice1: "commas",
+        choice2: "curly brackets",
+        choice3: "quotes",
+        choice4: "parenthesis",
+        answer: 3,
     },
 
      {
-        question: "What is JavaScript", 
-        choice1: "evil",
-        choice2: "helpful",
-        choice3: "annoying",
-        choice4: "basic",
-        answer: 2,
+        question: "Arrays in JavaScript can be used to store ___?", 
+        choice1: "numbers and strings",
+        choice2: "other arrays",
+        choice3: "booleans",
+        choice4: "all of the above",
+        answer: 4,
+    },
+
+    {
+        question: "A development tool for debugging by printing content to the debugger is ", 
+        choice1: "JavaScript",
+        choice2: "terminal",
+        choice3: "Bash",
+        choice4: "console log",
+        answer: 4,
+    },
+
+    {
+        question: "The conditions set by an if/else statemnt is enclosed by: ", 
+        choice1: "quotes",
+        choice2: "curly brackets",
+        choice3: "parenthesis",
+        choice4: "square brackets",
+        answer: 3,
     },
 
     {
@@ -40,25 +57,7 @@ let questions =[
         choice2: "helpful",
         choice3: "annoying",
         choice4: "basic",
-        answer: 2,
-    },
-
-    {
-        question: "What is JavaScript", 
-        choice1: "evil",
-        choice2: "helpful",
-        choice3: "annoying",
-        choice4: "basic",
-        answer: 2,
-    },
-
-    {
-        question: "What is JavaScript", 
-        choice1: "evil",
-        choice2: "helpful",
-        choice3: "annoying",
-        choice4: "basic",
-        answer: 2,
+        answer: 1,
     }
 ]
 
@@ -77,13 +76,11 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score)
 
-        return window.location.assign("/end.html")
+        return window.location.assign("end.html")
     }
 
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS)*100}%`
-
     const questionsIndex = Math.floor(Math.random()* availableQuestions.length)
     currentQuestion = availableQuestions [questionsIndex]
     question.innerText =  currentQuestion.question
