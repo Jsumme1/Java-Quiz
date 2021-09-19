@@ -53,21 +53,6 @@ body{
     text-align: center;
 }
 
-#progressBar{
-    width: 20rem;
-    height: 3rem;
-    border: 0.2rem solid rgb(38, 206, 58);
-    margin-top: 2rem;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-#progressBarFull {
-    height: 100%;
-    background-color:rgb(38, 206, 58);
-    width: 0%;
-}
-
 @media screen and (max-width:768px){
     .choice-container{
         min-width: 40rem;
