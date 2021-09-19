@@ -67,6 +67,7 @@ let questions =[
     }
 ]
 
+// set game values
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 5
 
