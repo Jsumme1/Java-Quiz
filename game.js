@@ -128,11 +128,11 @@ choices.forEach(choice => {
         const selectedAnswer = selectedChoice.dataset["number"]
         
         let classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect"
-
+// add points for correct answer
         if (classToApply === "correct"){
             incrementScore(SCORE_POINTS)
         }
-        
+        // time penalty if incorrect answer
         else if (classToApply === "incorrect") {
             time -= 10;
         }
@@ -152,6 +152,7 @@ choices.forEach(choice => {
 function TimeStop() {
   // stop timer
   clearInterval(timerId);
+  return window.location.assign("end.html");
 }
 
 // add points to score
